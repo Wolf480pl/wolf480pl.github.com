@@ -1,0 +1,78 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Tue, 15 Jul 2014 10:34:39 +0200
+
+For a number of reasons, i've recently set up a new OpenPGP key, and
+will be transitioning away from my old one.
+
+The old key will continue to be valid for some time, but i prefer all
+future correspondence to come to the new one. This message is signed 
+by both keys to certify the transition.
+
+the old key was:
+
+pub   2048R/B74690E583C39AB7 2013-06-23 [expires: 2015-06-23]
+      Key fingerprint = 2EB6 6BCA 6610 62B8 F39A  8D8F B746 90E5 83C3 9AB7
+
+And the new key is:
+
+pub   4096R/73C04340D2335052 2014-07-02 [expires: 2016-07-01]
+      Key fingerprint = E4C2 E023 3845 4C51 B7E8  A340 73C0 4340 D233 5052
+
+
+To fetch the full key, you can get it with:
+
+  wget -q -O- http://wolf480pl.github.io/wolf480pl.asc | gpg --import -
+
+Or, to fetch my new key from a public key server, you can simply do:
+
+  gpg --keyserver hkps://hkps.pool.sks-keyservers.net --recv-key D2335052
+
+If you already know my old key, you can now verify that the new key is
+signed by the old one:
+
+  gpg --check-sigs D2335052
+
+If you don't already know my old key, or you just want to be double
+extra paranoid, you can check the fingerprint against the one above:
+
+  gpg --fingerprint D2335052
+
+If you are satisfied that you've got the right key, and the UIDs match
+what you expect, I'd appreciate it if you would sign my key:
+
+  gpg --sign-key D2335052
+
+Lastly, i would appreciate it if you could send me the new signatures
+in an e-mail. If you have a functional MTA on your system, you can
+just do this:
+
+  gpg --armor --export D2335052 | mail -s 'OpenPGP Signatures' wolf480@interia.pl
+
+Or you can use your favourite e-mail client to send me the output of this:
+
+  gpg --armor --export D2335052
+
+Please let me know if there is any trouble, and sorry for the
+inconvenience.
+
+Regards,
+Wolf480pl
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBCgAGBQJTxOybAAoJELdGkOWDw5q353oH/iuw/wOUkHNF5jFnYmHeVVis
+SabOQS69kFeD7cudJk53Z64lkiFHiKf6ijBKyJCjro/H+6CxqfA19UTpkl0y1R6r
+OpwavLFw4hlnW6R049DJ1yt/Ay5/CXE6w7CTLUTtotOZjts+WqbyKLCK47twqaoT
+MsiG3SKYSpkJ4yhplkIku6j9e1Ujp9maub6bk2kh+xP1OIR6m7lZnl4PxGTd2yyV
+u/sKzG4gtZ0EU6290hgf9Y7ymMe614ZGFCxu+COPQUiVgDxVGF5gh/LRvLhCIz0J
+ZfrimRgx6fkc2VrjOJTI1jWfti+Y7AxVkfS6ZdT8V1pSuXR1q8LjMIQueYuBTzmJ
+ARwEAQEKAAYFAlPE7JsACgkQ0nXuRuP/EG7negf/fZe6Sx6/urNBnd6gdYE8NDnB
+52PlcLNCM0k4r2OX23d7vFU2VM5kmvLXpg4m3ESnoH9w9eHXb672YLXPTxf54SIz
+h2/SlNRo5upb33955XGNYjHD6mQtfaeKUgZhWF2MgXnRD+0tBErcJYPHo8NuiL1Z
+fhkBTEh9SiV0oHxxlTvs4oAhRtL/f0k2ZD018RAeozJlTNh6kR4V6ygYpDd9ULSB
+qqTlusoNGu7C43XIKnBdGzesRZIGXr3ArJbiaHhrCftWOOiEkEaCiup08DCyMFTy
+3dqqqxbMniQeRvat/MQi1o3FyIcs6mnAG+JlR9B4g4TEUF0KtNwdhiBc5CA53w==
+=GwVZ
+-----END PGP SIGNATURE-----
