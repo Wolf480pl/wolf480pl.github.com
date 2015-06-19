@@ -11,6 +11,20 @@ body>header {
 
 body>header img {
   float: left;
+  /*margin: -10px 0;*/
+}
+
+@media (max-width: 605px) {
+  body>header img {
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 582px) {
+  body>header img {
+    margin-top: -40px;
+    margin-bottom: -40px;
+  }
 }
 
 body>header a {
@@ -52,13 +66,36 @@ body>header .greeting h1 {
   /* TODO: smaller font on smaller devices (@media) */
 }
 
+@media (max-width: 444px) {
+  body>header .greeting h1 {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 359px) {
+  body>header .greeting h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 270px) {
+  body>header .greeting h1 {
+    font-size: 2.5em;
+  }  
+  
+  body>header p {
+    font-size: 1.2em
+  }
+}
+
 body>header .greeting .tagline {
-  text-indent: 15px;
+  padding-left: 15px;
   /**/font-size: 1em;/**/
 }
 
 .tagline small, .tagline sup {
   font-size: 0.5em;
+  white-space: nowrap;
 }
 
 h3 {
@@ -69,14 +106,27 @@ h3 {
   clear: both;
 }
 
-.sidebar {
-  float: left;
-  max-width: 30%;
+.fullwidth-inator {
+    display: table-cell;
+    width: 1000000px;
+}
+
+@media (min-width: 790px) {
+  .sidebar {
+    float: left;
+    max-width: 30%;
+    min-width: 270px;
+  }
 }
 
 .sidebar .box {
   display: block;
-  min-width: 220px;
+}
+
+@media (min-width: 280px) {
+  .sidebar .box {
+    min-width: 220px;
+  }
 }
 
 .box {
@@ -90,19 +140,34 @@ h3 {
   /**background: rgba(0, 0, 0, 0.1);/**/
 }
 
-.articles {
-  /**max-width: 700px;/**/
-  max-width: 65%; /* TODO: This should be lower for smaller devices (cause paddings take more % space) - use @media */
-  display: inline-block;
-  min-width: 500px;
-}
-
-.articles .box {
-  width: 100%;
-}
-
 .box h2 {
   margin: 5px 0;
+}
+
+@media (max-width: 280px) {
+  .box {
+    border-radius: 0;
+    border-width: 1px 0px 1px 0px;
+    margin: 20px 0 0;
+  }
+  
+  body {
+    margin: 0;
+  }
+}
+
+@media (min-width: 790px) {
+  .articles {
+    max-width: 65%;
+    display: inline-block;
+    min-width: 500px;
+  }
+}
+
+@media (min-width: 916px) {
+  .articles {
+    max-width: 70%;
+  }
 }
 
 /**/
@@ -164,7 +229,13 @@ a:hover {
   text-shadow: 0 0 4px;
 }
 
-p.rss-subscribe {
-  float: right;
-  margin-top: -20px;
+@media (max-width: 280px) {
+
+}
+
+@media (min-width: 320px) {
+  p.rss-subscribe {
+    float: right;
+    margin-top: -20px;
+  }
 }
