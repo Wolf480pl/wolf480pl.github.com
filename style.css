@@ -63,7 +63,6 @@ body>header .greeting h1 {
   text-shadow: 0 0 6px;
   /**padding: 10px 0;/**/
   padding: 0 0 11px;
-  /* TODO: smaller font on smaller devices (@media) */
 }
 
 @media (max-width: 444px) {
