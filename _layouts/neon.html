@@ -26,11 +26,16 @@
     <section class="box">
       <h3>My Projects</h3>
       <ul>
+        {% for project in site.projects %}
+          <li><a href="{{ project.url }}">{{ project.title }}</a> - {{ project.content | strip_p }}</li>
+        {% endfor %}
+        <!--
         <li><a href="https://github.com/Wolf480pl/MIaS4J">MIaS4J</a> - a Java method interception framework based on ASM</li>
         <li><a href="https://github.com/Wolf480pl/ircd">ircd4j</a> - a Java IRC server library</li>
         <li>a Java implementation of <a href="https://github.com/Wolf480pl/PHPass">PHPass</a> password hashing algorithm</li>
         <li><a href="https://github.com/Wolf480pl/template-maven-plugin">template-maven-plugin</a> - a Maven plugin for generating code from trove4j-like templates</li>
         <li><a href="https://github.com/Wolf480pl/jline-log4j2-appender">jline-log4j2-appender</a> - a log4j2 appender which prints output to jline console without getting in the way of the input prompt</li>
+        -->
       </ul>
     </section>
     
