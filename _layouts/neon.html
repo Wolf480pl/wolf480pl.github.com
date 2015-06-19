@@ -12,11 +12,14 @@
     <section class="box">
       <h3>Me elsewhere</h3>
       <dl>
-        <dt>Twitter:</dt><dd><a rel="me" href="https://twitter.com/Wolf480pl/">@Wolf480pl</a></dd>
+        {% for place in site.me_elsewhere %}
+          <dt>{{ place.name }}:</dt><dd>{% if place.profile_url %}<a href="{{ place.profile_url }}">{{ place.content }}</a>{% else %}{{ place.content }}{% endif %}</dd>
+        {% endfor %}
+<!--        <dt>Twitter:</dt><dd><a rel="me" href="https://twitter.com/{{ site.twitter_username }}/">@{{ site.twitter_username }}</a></dd>
         <dt>Twister:</dt><dd>@wolf480pl</dd>
         <dt>XMPP:</dt><dd><a href="xmpp:wolf480pl@neko.im">wolf480pl@neko.im</a></dd>      
         <dt>Keybase:</dt><dd><a href="https://keybase.io/wolf480pl/">wolf480pl</a></dd>
-        <dt>GitHub:</dt><dd><a href="https://github.com/Wolf480pl/">Wolf480pl</a></dd>
+        <dt>GitHub:</dt><dd><a href="https://github.com/Wolf480pl/">Wolf480pl</a></dd>-->
       </dl>
     </section>
     
