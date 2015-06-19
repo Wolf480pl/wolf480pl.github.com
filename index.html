@@ -22,6 +22,7 @@ layout: neon
 
         <div class="post-excerpt">
           {{ post.excerpt }}
+          <a href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
         </div>
       </li>
     {% endfor %}
