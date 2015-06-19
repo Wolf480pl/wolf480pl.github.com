@@ -1,0 +1,170 @@
+
+body {
+  background: #111;
+  color: #aaa
+}
+
+body>header {
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+body>header img {
+  float: left;
+}
+
+body>header a {
+	color: inherit;
+}
+
+body>header a:hover {
+	color: #0AB;
+}
+
+body>header .greeting {
+  padding: 22px;
+  color: #0ff;
+  text-shadow: 0 0 4px;
+  font-family: "URW Gothic", sans;
+  /**/float: left;/**/ /* helps the responsiveness (the Hi part doesn't get separated) but causes the text not to treat space behind the image as its own; might be worth enabling only on certain @media */
+}
+
+body>header .greeting {
+  font-family: "Cantarell", "URW Gothic", sans;
+}
+
+body>header p {
+  margin: 0;
+  line-height: 0.9;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+body>header .greeting h1 {
+  display: block;
+  margin: 0 auto;
+  font-weight: normal;
+  font-size: 5em;
+  line-height: 0.6;
+  text-shadow: 0 0 6px;
+  /**padding: 10px 0;/**/
+  padding: 0 0 11px;
+  /* TODO: smaller font on smaller devices (@media) */
+}
+
+body>header .greeting .tagline {
+  text-indent: 15px;
+  /**/font-size: 1em;/**/
+}
+
+.tagline small, .tagline sup {
+  font-size: 0.5em;
+}
+
+h3 {
+  margin: 0 0 7px;
+}
+
+.separator {
+  clear: both;
+}
+
+.sidebar {
+  float: left;
+  max-width: 30%;
+}
+
+.sidebar .box {
+  display: block;
+  min-width: 220px;
+}
+
+.box {
+  /**/border-radius: 5px;/**/
+  border: 1px solid #0ff;
+  box-shadow: 0px 0px 10px #0ff;
+  margin: 20px 10px 0px;
+  padding: 15px;
+  display: inline-block;
+  /**/background: rgba(0, 128, 192, 0.1);/**/
+  /**background: rgba(0, 0, 0, 0.1);/**/
+}
+
+.articles {
+  /**max-width: 700px;/**/
+  max-width: 65%; /* TODO: This should be lower for smaller devices (cause paddings take more % space) - use @media */
+  display: inline-block;
+  min-width: 500px;
+}
+
+.articles .box {
+  width: 100%;
+}
+
+.box h2 {
+  margin: 5px 0;
+}
+
+/**/
+article span {
+	color: inherit !important;
+	text-shadow: inherit !important;
+}
+/**/
+
+ul, dl, .box p {
+  /**display: inline-block;/**/
+  list-style: none;
+  padding: 0;
+  /**margin-top: 0;/**/
+  /**/margin: 0;/**/
+  /**width: 100%;/**/
+}
+
+ul li {
+  padding-left: 5px;
+  text-indent: -5px;
+}
+
+ul li:before {
+  color: #0ab;
+  content: "❯ ";
+  /*‣*/
+}
+
+dt, dd {
+  display: inline;
+  margin: 0;
+}
+
+dd {
+  margin: 0 5px;
+  float: right;
+}
+
+dd:after {
+  clear: both;  
+}
+
+dt::before {
+  display:block;
+  content: ""
+}
+
+a {
+  /**color: inherit;
+  font-weight: bold;/**/
+  /**/color: #0ab;/**/
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0ff;
+  /**text-decoration: underline;/**/
+  text-shadow: 0 0 4px;
+}
+
+p.rss-subscribe {
+  float: right;
+  margin-top: -20px;
+}
