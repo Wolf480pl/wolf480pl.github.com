@@ -27,7 +27,11 @@
       <h3>My Projects</h3>
       <ul>
         {% for project in site.projects %}
-          <li><a href="{{ project.url }}">{{ project.title }}</a> - {{ project.content | strip_p }}</li>
+          {% if project.widget %}
+            <li><a href="{{ project.url }}">{{ project.title }}</a>
+            {% if project.nodesc %}{% else %} - {% if project.shortdesc %}{{ project.shortdesc }}{% else %}{{ project.content | strip_p }}{% endif %}{% endif %}
+            </li>
+          {% endif %}
         {% endfor %}
         <!--
         <li><a href="https://github.com/Wolf480pl/MIaS4J">MIaS4J</a> - a Java method interception framework based on ASM</li>
@@ -37,6 +41,7 @@
         <li><a href="https://github.com/Wolf480pl/jline-log4j2-appender">jline-log4j2-appender</a> - a log4j2 appender which prints output to jline console without getting in the way of the input prompt</li>
         -->
       </ul>
+      <a href="{{"/projects.html" | prepend: site.baseurl}}">Read more...</a>
     </section>
     
     </section>
