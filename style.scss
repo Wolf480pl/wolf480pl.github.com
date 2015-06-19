@@ -69,9 +69,9 @@ body {
     }
     a {
       color: inherit;
-      &:hover {
-        color: $theme-color;
-      }
+    }
+    .tagline a:hover {
+      color: $theme-color;
     }
     .greeting {
       padding: 22px;
@@ -191,6 +191,15 @@ h3 {
   /**background: rgba(0, 0, 0, 0.1);/**/
   h2 {
     margin: 5px 0;
+    &.post-title {
+      margin-bottom: 0;
+    }
+  }
+  p.post-meta {
+    font-size: 0.9em;
+    margin-top: -5px;
+    font-style: italic;
+    padding-left: 5px;
   }
 }
 
@@ -288,4 +297,8 @@ a {
     float: right;
     margin-top: -20px;
   }
+}
+
+.post-header {
+  margin-bottom: 5px;
 }
