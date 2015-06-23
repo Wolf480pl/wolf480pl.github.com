@@ -1,0 +1,14 @@
+  - name: Twitter
+    profile_url: https://twitter.com/Wolf480pl/
+    content: "@Wolf480pl"
+  - name: Twister
+    content: "@wolf480pl"
+  - name: XMPP
+    profile_url: xmpp:wolf480pl@neko.im
+    content: wolf480pl@neko.im
+  - name: Keybase
+    profile_url: https://keybase.io/wolf480pl/
+    content: wolf480pl
+  - name: GitHub
+    profile_url: https://github.com/Wolf480pl/
+    content: Wolf480pl
