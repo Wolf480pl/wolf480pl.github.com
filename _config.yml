@@ -10,12 +10,16 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wolf480pl.github.io" # the base hostname & protocol for your site
 twitter_username: Wolf480pl
 github_username:  Wolf480pl
+highlighter: pygments
 
 # Build settings
 markdown: kramdown
+#markdown: redcarpet
 
 kramdown:
   input: GFM
+#  enable_coderay: true
+  syntax_highlighter: rouge
 
 # Collections
 collections:

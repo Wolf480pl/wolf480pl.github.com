@@ -3,6 +3,8 @@
 ---
 @charset "utf-8";
 
+@import "syntax-highlighting-neon";
+
 // Variables
 
 // Cyan
@@ -228,7 +230,7 @@ h3 {
   }
 }
 
-/**/
+/**
 article span {
   color: inherit !important;
   text-shadow: inherit !important;
