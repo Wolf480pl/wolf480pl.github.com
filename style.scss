@@ -82,13 +82,16 @@ body {
       color: $theme-color-hl;
       text-shadow: 0 0 4px;
       /**/float: left;/**/ /* helps the responsiveness (the Hi part doesn't get separated) but causes the text not to treat space behind the image as its own; might be worth enabling only on certain @media */
-      font-family: "Cantarell", "URW Gothic", sans-serif;
+      font-family: "Cantarell", "Ubuntu", "Trebuchet MS", sans-serif;
+      font-family: "Roboto", "Roboto-Fallback";
+      font-size: 1.2em;
     }
     p {
       margin: 0;
       line-height: 0.9;
       font-size: 1.5em;
-      font-weight: bold;
+      //font-weight: bold;
+      //font-weight: 300;
     }
     .greeting {
       h1 {
@@ -98,11 +101,13 @@ body {
         font-size: 5em;
         line-height: 0.6;
         text-shadow: 0 0 6px;
-        /**padding: 10px 0;/**/
         padding: 0 0 11px;
+        padding: 6px 0 5px;
+        font-weight: 100;
       }
       .tagline {
         padding-left: 15px;
+        padding-left: 20px;
         /**/font-size: 1em;/**/
       }
     }
@@ -131,6 +136,7 @@ body {
 @media (max-width: 359px) {
   body > header .greeting h1 {
     font-size: 3em;
+    font-weight: 300;
   }
 }
 
