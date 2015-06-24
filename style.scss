@@ -3,6 +3,7 @@
 ---
 @charset "utf-8";
 
+@import "css/roboto.css";
 @import "syntax-highlighting-neon";
 
 // Variables
@@ -62,6 +63,7 @@ $theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg)
 body {
   background: #111;
   color: #aaa;
+  font-family: "Roboto", "Droid Sans", "Helvetica", "arial", sans-serif;
   > header {
     margin: 30px auto;
     max-width: 700px;
@@ -79,9 +81,8 @@ body {
       padding: 22px;
       color: $theme-color-hl;
       text-shadow: 0 0 4px;
-      font-family: "URW Gothic", sans;
       /**/float: left;/**/ /* helps the responsiveness (the Hi part doesn't get separated) but causes the text not to treat space behind the image as its own; might be worth enabling only on certain @media */
-      font-family: "Cantarell", "URW Gothic", sans;
+      font-family: "Cantarell", "URW Gothic", sans-serif;
     }
     p {
       margin: 0;
