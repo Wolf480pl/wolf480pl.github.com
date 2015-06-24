@@ -82,8 +82,7 @@ body {
       color: $theme-color-hl;
       text-shadow: 0 0 4px;
       /**/float: left;/**/ /* helps the responsiveness (the Hi part doesn't get separated) but causes the text not to treat space behind the image as its own; might be worth enabling only on certain @media */
-      font-family: "Cantarell", "Ubuntu", "Trebuchet MS", sans-serif;
-      font-family: "Roboto", "Roboto-Fallback";
+      font-family: "Roboto", "Roboto-Fallback", "Ubuntu", "Helvetica", "Arial", sans-serif;
       font-size: 1.2em;
     }
     p {
@@ -262,7 +261,7 @@ ul li {
   text-indent: -5px;
   &:before {
     color: $theme-color;
-    font-family: serif;
+    font-family: "FreeSerif", serif;
     content: "❯ ";
     /*‣*/
   }
