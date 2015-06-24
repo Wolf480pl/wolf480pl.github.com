@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 @import "css/roboto.css";
-@import "syntax-highlighting-neon";
+@import "css/roboto-fallback.css";
 
 // Variables
 
@@ -63,7 +63,7 @@ $theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg)
 body {
   background: #111;
   color: #aaa;
-  font-family: "Roboto", "Droid Sans", "Helvetica", "arial", sans-serif;
+  font-family: "Roboto", "Roboto-Fallback", "Droid Sans", "Helvetica", "Arial", sans-serif;
   > header {
     margin: 30px auto;
     max-width: 700px;
@@ -305,3 +305,5 @@ a {
 .post-header {
   margin-bottom: 5px;
 }
+
+@import "syntax-highlighting-neon";
