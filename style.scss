@@ -305,11 +305,16 @@ a {
   p.rss-subscribe {
     float: right;
     margin-top: -20px;
+    font-style: italic;
   }
 }
 
 .post-header {
   margin-bottom: 5px;
+}
+
+.read-more {
+  font-style: italic;
 }
 
 @import "syntax-highlighting-neon";
