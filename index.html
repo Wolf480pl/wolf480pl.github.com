@@ -14,6 +14,7 @@ layout: neon
     {% for post in site.posts %}
       <li class="box">
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="fullwidth-inator"></div>
         <header class="post-header">
           <h3>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
