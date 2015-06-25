@@ -314,6 +314,10 @@ a {
   }
 }
 
+address {
+  font-style: inherit;
+}
+
 @media (max-width: 280px) {}
 
 @media (min-width: 320px) {
