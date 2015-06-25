@@ -13,7 +13,7 @@ layout: neon
   <ul class="post-list">
     {% for post in site.posts %}
       <li class="box">
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-meta"><time datetime="{{ post.date | date: "%Y-%0m-%0d" }}">{{ post.date | date: "%-d %b %Y" }}</time></span>
         <div class="fullwidth-inator"></div>
         <header class="post-header">
           <h3>

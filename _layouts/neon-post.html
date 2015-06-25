@@ -5,7 +5,7 @@ layout: neon
 
   <header class="post-header">
     <h2 class="post-title">{{ page.title }}</h2>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ page.date | date: "%Y-%0m-%0d" }}">{{ page.date | date: "%-d %b %Y" }}</time>{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
   <div class="post-content">
