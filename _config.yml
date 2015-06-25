@@ -3,9 +3,8 @@ title: "Hi, I'm Wolf480pl"
 title_suffix: " - Wolf480pl's blog"
 email: wolf480@interia.pl
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I'm a Linux geek from Poland. I use Arch Linux with a custom DE (compiz + cairo-dock + screenlets).
+  I like programming. I know some of C, C++, Python, Lua, and Lisp, but most of the stuff I code in Java.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wolf480pl.github.io" # the base hostname & protocol for your site
 twitter_username: Wolf480pl
