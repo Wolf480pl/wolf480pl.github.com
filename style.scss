@@ -203,11 +203,15 @@ h3 {
       margin-bottom: 0;
     }
   }
-  p.post-meta {
-    font-size: 0.9em;
-    margin-top: -3px;
-    font-style: italic;
-    padding-left: 5px;
+  p {
+    margin-bottom: 0;
+    margin-top: 10px;
+    &.post-meta {
+      font-size: 0.9em;
+      margin-top: -3px;
+      font-style: italic;
+      padding-left: 5px;
+    }
   }
 }
 
@@ -243,7 +247,7 @@ article span {
 }
 /**/
 
-ul, dl, .box p {
+ul, dl {
   /**display: inline-block;/**/
   list-style: none;
   padding: 0;
