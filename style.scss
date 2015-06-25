@@ -111,6 +111,17 @@ body {
       }
     }
   }
+  > footer {
+    display: table;
+    margin: auto;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+  }
 }
 
 @media (max-width: 605px) {

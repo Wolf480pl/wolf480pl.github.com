@@ -10,7 +10,18 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wolf480pl.github.io" # the base hostname & protocol for your site
 twitter_username: Wolf480pl
 github_username:  Wolf480pl
-#license: '#'
+#license: CC-BY
+#license_url: '#'
+
+#copyright:
+#  - name: Jekyll Theme
+#    license: MIT
+#    license_url: ''
+#  - name: Any code snippets
+#    license: MIT
+#    license_url: ''
+#    suffix: ', unless otherwise noted'
+
 
 permalink: pretty
 
