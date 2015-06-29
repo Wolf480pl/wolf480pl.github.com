@@ -10,10 +10,10 @@
   {% if page.tags %}<meta name="keywords" content="{{ page.tags |join: ','}}">{% endif %}
   {% if page.license_url or site.license_url %}<link rel="license" href="{% if page.license_url %}{{ page.license_url }}{% else %}{{ site.license }}{% endif %}">{% endif %}
 
-  <link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ "img/husky-green.svg" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="144x144" href="{{ "img/husky-green-alpha-square-144.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "img/husky-green-alpha-square-32.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ "/assets/husky-green.svg" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="144x144" href="{{ "/assets/husky-green-alpha-square-144.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/husky-green-alpha-square-32.png" | prepend: site.baseurl }}">
 </head>
