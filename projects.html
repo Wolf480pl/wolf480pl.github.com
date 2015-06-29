@@ -4,7 +4,7 @@ title: My Projects
 ---
       <ul>
         {% for project in site.projects %}
-          <li><a href="{{ project.url }}">{{ project.title }}</a> - {{ project.content | strip_first_p }}</li>
+          <p><li><a href="{{ project.url }}">{{ project.title }}</a> - {{ project.content | strip_first_p }}</li></p>
         {% endfor %}
       </ul>
 
