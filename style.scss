@@ -295,6 +295,9 @@ dd {
   &:after {
     clear: both;
   }
+  p {
+    display: inline
+  }
 }
 
 dt::before {

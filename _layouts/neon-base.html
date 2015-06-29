@@ -13,7 +13,7 @@
       <h3>Me elsewhere</h3>
       <dl>
         {% for place in site.data.me_elsewhere %}
-          <dt>{{ place.name }}:</dt><dd>{% if place.profile_url %}<a href="{{ place.profile_url }}">{{ place.content }}</a>{% else %}{{ place.content }}{% endif %}</dd>
+          <dt>{{ place.name }}:</dt><dd>{% if place.profile_url %}<a href="{{ place.profile_url }}">{{ place.content | markdownify }}</a>{% else %}{{ place.content | markdownify }}{% endif %}</dd>
         {% endfor %}
 <!--        <dt>Twitter:</dt><dd><a rel="me" href="https://twitter.com/{{ site.twitter_username }}/">@{{ site.twitter_username }}</a></dd>
         <dt>Twister:</dt><dd>@wolf480pl</dd>
