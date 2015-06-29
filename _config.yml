@@ -24,6 +24,9 @@ github_username:  Wolf480pl
 
 
 permalink: pretty
+exclude:
+  - LICENSE.txt
+  - README.md
 
 highlighter: pygments
 
