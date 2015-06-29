@@ -1,6 +1,6 @@
 ---
 title: jline-log4j2-appender
-url: https://github.com/Wolf480pl/jline-log4j2-appender
+project_url: https://github.com/Wolf480pl/jline-log4j2-appender
 widget: true
 nodesc: true
 ---

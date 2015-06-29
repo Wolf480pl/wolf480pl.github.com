@@ -1,6 +1,6 @@
 ---
 title: PHPass implementation in Java
-url: https://github.com/Wolf480pl/PHPass
+project_url: https://github.com/Wolf480pl/PHPass
 widget: true
 nodesc: true
 ---

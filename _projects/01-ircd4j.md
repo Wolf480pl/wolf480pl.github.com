@@ -1,6 +1,6 @@
 ---
 title: ircd4j
-url: https://github.com/Wolf480pl/ircd4j
+project_url: https://github.com/Wolf480pl/ircd4j
 widget: true
 shortdesc: a Java IRC server library
 ---

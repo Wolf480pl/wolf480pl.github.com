@@ -1,6 +1,6 @@
 ---
 title: MIaS4J
-url: https://github.com/Wolf480pl/MIaS4J
+project_url: https://github.com/Wolf480pl/MIaS4J
 widget: true
 shortdesc: Method Interception and Sandboxing
 ---
