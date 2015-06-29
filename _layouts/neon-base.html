@@ -29,7 +29,7 @@
         {% for project in site.projects %}
           {% if project.widget %}
             <li><a href="{{ project.url }}">{{ project.title }}</a>
-            {% if project.nodesc %}{% else %} - {% if project.shortdesc %}{{ project.shortdesc }}{% else %}{{ project.content | strip_p }}{% endif %}{% endif %}
+            {% if project.nodesc %}{% else %} - {% if project.shortdesc %}{{ project.shortdesc }}{% else %}{{ project.content | replace: '<p>' |replace: '</p>' }}{% endif %}{% endif %}
             </li>
           {% endif %}
         {% endfor %}
