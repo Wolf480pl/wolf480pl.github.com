@@ -13,19 +13,19 @@ github_username:  Wolf480pl
 #license: CC-BY
 #license_url: '#'
 
-#copyright:
-#  - name: neon-jekyll-theme
-#    license: MIT
-#    license_url: ''
-#  - name: Any code snippets
-#    license: MIT
-#    license_url: ''
+copyright:
+#  - name: Any code snippets in the blog content
+#    plural: true
+#    license: MIT License
+#    license_url: '/LICENSE.txt'
 #    suffix: ', unless otherwise noted'
+  - name: The neon-jekyll-theme
+    license: MIT License
+    license_url: '/LICENSE.txt'
 
 
 permalink: pretty
 exclude:
-  - LICENSE.txt
   - README.md
 
 highlighter: pygments

@@ -8,7 +8,7 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   {% if page.tags %}<meta name="keywords" content="{{ page.tags |join: ','}}">{% endif %}
-  {% if page.license_url or site.license_url %}<link rel="license" href="{% if page.license_url %}{{ page.license_url }}{% else %}{{ site.license }}{% endif %}">{% endif %}
+  {% if page.license_url or site.license_url %}<link rel="license" href="{% if page.license_url %}{{ page.license_url }}{% else %}{{ site.license_url }}{% endif %}">{% endif %}
 
   <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
