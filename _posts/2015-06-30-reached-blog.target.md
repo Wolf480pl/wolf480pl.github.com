@@ -6,7 +6,7 @@ tags: blog start jekyll theme linux
 ---
 Oh, hi!
  
-I just got my blog up and running. It's powered by [Jekyll], using my custom theme. You can find the source code of the blog in this [GitHub repo][repo]. The theme's license is [MIT], and the text is... let's say [CC-BY]. So yeah...
+I just got my blog up and running. It's powered by [Jekyll], using my [custom theme][theme]. You can find the source code of the blog in this [GitHub repo][repo]. The theme's license is [MIT], and the text is... let's say [CC-BY]. So yeah...
 
 Anyway, I'll be trying to write a post here whenever I encounter an interesting issue, or solve an interesting problem. Meanwhile, you can read the [About] page. It's kinda long, so sorry for that, but I hope that the way it's split into subsections makes it more readable and less TL;DR-ish.
 
@@ -15,7 +15,8 @@ By the way, I actually tried to start a blog twice in the past. Both attempts fa
 Oh, and I'd love to post a rant or two here, too. I love reading rants, and I guess writing them is even more enjoyable :P. Dunno if I'll have an opportunity, though.
 
 [Jekyll]:  http://jekyllrb.com
-[repo]:    #
-[MIT]:     #
-[CC-BY]:   #
+[theme]:   https://github.com/Wolf480pl/neon-jekyll-theme
+[repo]:    https://github.com/Wolf480pl/wolf480pl.github.com
+[MIT]:     {{ "/LICENSE.txt" | prepend: site.baseurl }}
+[CC-BY]:   https://creativecommons.org/licenses/by/4.0/
 [About]:   {{ "/about/" | prepend: site.baseurl }}
