@@ -1,0 +1,346 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "roboto.css";
+@import "roboto-fallback.css";
+
+// Variables
+
+// Cyan
+//*
+$theme-color-hl: #0ff;
+$theme-color: #0ab;
+$theme-color-bg: rgb(0, 128, 192);
+/**/
+// Green
+/*
+$theme-color-hl: #0f0;
+$theme-color: #090;
+$theme-color-bg: rgb(0, 128, 0);
+/**/
+// Yellow
+/*
+$theme-color-hl: #ff0;
+$theme-color: #ba0;
+$theme-color-bg: rgb(192, 128, 0);
+/**/
+// Red
+/*
+$theme-color-hl: #f00;
+$theme-color: #900;
+$theme-color-bg: rgb(128, 0, 0);
+/**/
+// Purple
+/*
+$theme-color-hl: #f0f;
+$theme-color: #a0b;
+$theme-color-bg: rgb(128, 0, 192);
+/**/
+// Blue
+/*
+$theme-color-hl: #47f;
+$theme-color: #03b;
+$theme-color-bg: rgb(0, 0, 192);
+/**/
+
+// ColorShifter
+/*
+$hue: 180deg;
+
+$cyan-color-hl: #0ff;
+$cyan-color: #0ab;
+$cyan-color-bg: rgb(0, 128, 192);
+// TODO: Take into account the hue difference between the base colors, also add lightness correction control
+
+$theme-color-hl: hsl($hue, saturation($cyan-color-hl), lightness($cyan-color-hl));
+$theme-color: hsl($hue, saturation($cyan-color), lightness($cyan-color));
+$theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg));
+/**/
+// The rest of the stuff
+
+body {
+  background: #111;
+  color: #aaa;
+  font-family: "Roboto", "Roboto-Fallback", "Droid Sans", "Helvetica", "Arial", sans-serif;
+  > header {
+    margin: 30px auto;
+    max-width: 700px;
+    img {
+      float: left;
+      /*margin: -10px 0;*/
+    }
+    a {
+      color: inherit;
+    }
+    .tagline a:hover {
+      color: $theme-color;
+    }
+    .greeting {
+      padding: 22px;
+      color: $theme-color-hl;
+      text-shadow: 0 0 4px;
+      /**/float: left;/**/ /* helps the responsiveness (the Hi part doesn't get separated) but causes the text not to treat space behind the image as its own; might be worth enabling only on certain @media */
+      font-family: "Roboto", "Roboto-Fallback", "Ubuntu", "Helvetica", "Arial", sans-serif;
+      font-size: 1.2em;
+    }
+    p {
+      margin: 0;
+      line-height: 0.9;
+      font-size: 1.5em;
+      //font-weight: bold;
+      //font-weight: 300;
+    }
+    .greeting {
+      h1 {
+        display: block;
+        margin: 0 auto;
+        font-weight: normal;
+        font-size: 5em;
+        line-height: 0.6;
+        text-shadow: 0 0 6px;
+        padding: 0 0 11px;
+        padding: 6px 0 5px;
+        font-weight: 100;
+      }
+      .tagline {
+        padding-left: 15px;
+        padding-left: 20px;
+        /**/font-size: 1em;/**/
+      }
+    }
+  }
+  > footer {
+//    display: table;
+    margin: auto;
+    font-size: 0.7em;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    img {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 605px) {
+  body > header img {
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 582px) {
+  body > header img {
+    margin-top: -40px;
+    margin-bottom: -40px;
+  }
+}
+
+@media (max-width: 444px) {
+  body > header .greeting h1 {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 359px) {
+  body > header .greeting h1 {
+    font-size: 3em;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 270px) {
+  body > header {
+    .greeting h1 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.tagline {
+  small, sup {
+    font-size: 0.5em;
+    white-space: nowrap;
+  }
+}
+
+h3 {
+  margin: 0 0 7px;
+}
+
+.separator {
+  clear: both;
+}
+
+.fullwidth-inator {
+  display: table-cell;
+  width: 1000000px;
+}
+
+@media (min-width: 790px) {
+  .sidebar {
+    float: left;
+    max-width: 30%;
+    min-width: 270px;
+  }
+}
+
+.sidebar .box {
+  display: block;
+}
+
+@media (min-width: 280px) {
+  .sidebar .box {
+    min-width: 220px;
+  }
+}
+
+.box {
+  /**/border-radius: 5px;/**/
+  border: 1px solid $theme-color-hl;
+  box-shadow: 0px 0px 10px $theme-color-hl;
+  margin: 20px 10px 0px;
+  padding: 15px;
+  display: inline-block;
+  /**/background: rgba($theme-color-bg, 0.1);/**/
+  /**background: rgba(0, 0, 0, 0.1);/**/
+  h2 {
+    margin: 5px 0;
+    &.post-title {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    margin-bottom: 0;
+    margin-top: 10px;
+    &.post-meta {
+      font-size: 0.9em;
+      margin-top: -3px;
+      font-style: italic;
+      padding-left: 5px;
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .box {
+    border-radius: 0;
+    border-width: 1px 0px 1px 0px;
+    margin: 20px 0 0;
+  }
+  body {
+    margin: 0;
+  }
+}
+
+@media (min-width: 790px) {
+  .articles {
+    max-width: 65%;
+    display: inline-block;
+    min-width: 500px;
+  }
+}
+
+@media (min-width: 916px) {
+  .articles {
+    max-width: 70%;
+  }
+}
+
+/**
+article span {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}
+/**/
+
+ul, dl {
+  /**display: inline-block;/**/
+  list-style: none;
+  padding: 0;
+  /**margin-top: 0;/**/
+  /**/margin: 0;/**/
+  /**width: 100%;/**/
+}
+
+ul li div {
+  text-indent: 0; // TODO: Figure out what 'text-ident: initial' means
+}
+
+ul li {
+  padding-left: 5px;
+  text-indent: -5px;
+  &:before {
+    color: $theme-color;
+    font-family: "FreeSerif", serif;
+    content: "❯ ";
+    /*‣*/
+  }
+}
+
+dt {
+  display: inline;
+  margin: 0;
+}
+
+dd {
+  display: inline;
+  margin: 0;
+  margin: 0 5px;
+  float: right;
+  &:after {
+    clear: both;
+  }
+  p {
+    display: inline
+  }
+}
+
+dt::before {
+  display: block;
+  content: "";
+}
+
+a {
+  /**color: inherit;
+  font-weight: bold;/**/
+  /**/color: $theme-color;/**/
+  text-decoration: none;
+  &:hover {
+    color: $theme-color-hl;
+    /**text-decoration: underline;/**/
+    text-shadow: 0 0 4px;
+  }
+}
+
+address {
+  font-style: inherit;
+}
+
+@media (max-width: 280px) {}
+
+@media (min-width: 320px) {
+  p.rss-subscribe {
+    float: right;
+    margin-top: -20px;
+    font-style: italic;
+  }
+}
+
+.post-header {
+  margin-bottom: 5px;
+}
+
+.read-more {
+  font-style: italic;
+}
+
+@import "syntax-highlighting-neon.css";

@@ -1,0 +1,33 @@
+---
+layout: neon
+---
+
+<div class="home">
+
+  <div class="box">
+    <div class="fullwidth-inator"></div>
+    <h2 class="page-heading">Blog Posts</h2>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </div>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="box">
+        <span class="post-meta"><time datetime="{{ post.date | date: "%Y-%0m-%0d" }}">{{ post.date | date: "%-d %b %Y" }}</time></span>
+        <div class="fullwidth-inator"></div>
+        <header class="post-header">
+          <h3>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h3>
+        </header>
+
+        <div class="post-excerpt">
+          {{ post.excerpt }}
+          <a class="post-link read-more" href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+</div>

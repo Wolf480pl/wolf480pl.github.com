@@ -1,0 +1,45 @@
+# Site settings
+title: "Hi, I'm Wolf480pl"
+title_suffix: " - Wolf480pl's blog"
+email: wolf480@interia.pl
+author: Wolf480pl
+description: > # this means to ignore newlines until "baseurl:"
+  I'm a Linux geek from Poland. I use Arch Linux with a custom DE (compiz + cairo-dock + screenlets).
+  I like programming. I know some of C, C++, Python, Lua, and Lisp, but most of the stuff I code in Java.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://wolf480pl.github.io" # the base hostname & protocol for your site
+twitter_username: Wolf480pl
+github_username:  Wolf480pl
+#license: CC-BY
+license_url: 'https://creativecommons.org/licenses/by/4.0/'
+
+copyright:
+  - name: Any code snippets in the blog content
+    plural: true
+    license: MIT License
+    license_url: '/LICENSE.txt'
+    suffix: ', unless otherwise noted'
+  - name: The neon-jekyll-theme
+    license: MIT License
+    license_url: '/LICENSE.txt'
+
+
+permalink: pretty
+exclude:
+  - README.md
+
+highlighter: pygments
+
+# Build settings
+markdown: kramdown
+#markdown: redcarpet
+
+kramdown:
+  input: GFM
+#  enable_coderay: true
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  - projects
+

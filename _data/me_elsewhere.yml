@@ -1,0 +1,20 @@
+  - name: Twitter
+    profile_url: https://twitter.com/Wolf480pl/
+    content: "@Wolf480pl"
+  - name: Twister
+    content: "@wolf480pl"
+  - name: XMPP
+    profile_url: xmpp:wolf480pl@neko.im
+    content: wolf480pl@neko.im
+  - name: IRC
+#    profile_url: irc://irc.esper.net/Wolf480pl,isnick
+    content: Wolf480pl on [EsperNET](irc://irc.esper.net/)
+  - name: IRC
+#    profile_url: irc://irc.pirc.pl/Wolf480pl,isnick
+    content: Wolf480pl on [PIRC.pl](irc://irc.pirc.pl/)
+  - name: Keybase
+    profile_url: https://keybase.io/wolf480pl/
+    content: wolf480pl
+  - name: GitHub
+    profile_url: https://github.com/Wolf480pl/
+    content: Wolf480pl

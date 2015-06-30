@@ -1,0 +1,10 @@
+---
+layout: neon-page
+title: My Projects
+---
+      <ul>
+        {% for project in site.projects %}
+          <p><li><a href="{{ project.project_url }}">{{ project.title }}</a> - {{ project.content | replace_first: '<p>' |replace_first: '</p>' }}</li></p>
+        {% endfor %}
+      </ul>
+

@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{{ site.title_suffix }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}">
+  <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+  {% if page.tags %}<meta name="keywords" content="{{ page.tags |join: ','}}">{% endif %}
+  {% if page.license_url or site.license_url %}<link rel="license" href="{% if page.license_url %}{{ page.license_url }}{% else %}{{ site.license_url }}{% endif %}">{% endif %}
+
+  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ "/assets/husky-green.svg" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="144x144" href="{{ "/assets/husky-green-alpha-square-144.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/husky-green-alpha-square-32.png" | prepend: site.baseurl }}">
+</head>

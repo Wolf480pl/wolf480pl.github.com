@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  
+  {% include neon-head.html %}
+  
+  <body>
+
+    {% include neon-header.html %}
+    
+    <section class="sidebar">
+    
+    <section class="box"><address>
+      <h3>Me elsewhere</h3>
+      <dl>
+        {% for place in site.data.me_elsewhere %}
+          <dt>{{ place.name }}:</dt><dd>{% if place.profile_url %}<a href="{{ place.profile_url }}">{{ place.content | markdownify }}</a>{% else %}{{ place.content | markdownify }}{% endif %}</dd>
+        {% endfor %}
+<!--        <dt>Twitter:</dt><dd><a rel="me" href="https://twitter.com/{{ site.twitter_username }}/">@{{ site.twitter_username }}</a></dd>
+        <dt>Twister:</dt><dd>@wolf480pl</dd>
+        <dt>XMPP:</dt><dd><a href="xmpp:wolf480pl@neko.im">wolf480pl@neko.im</a></dd>      
+        <dt>Keybase:</dt><dd><a href="https://keybase.io/wolf480pl/">wolf480pl</a></dd>
+        <dt>GitHub:</dt><dd><a href="https://github.com/Wolf480pl/">Wolf480pl</a></dd>-->
+      </dl>
+    </address></section>
+    
+    <section class="box">
+      <h3>My Projects</h3>
+      <ul>
+        {% for project in site.projects %}
+          {% if project.widget %}
+            <li><a href="{{ project.project_url }}">{{ project.title }}</a>
+            {% if project.nodesc %}{% else %} - {% if project.shortdesc %}{{ project.shortdesc }}{% else %}{{ project.content | replace: '<p>' |replace: '</p>' }}{% endif %}{% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+        <!--
+        <li><a href="https://github.com/Wolf480pl/MIaS4J">MIaS4J</a> - a Java method interception framework based on ASM</li>
+        <li><a href="https://github.com/Wolf480pl/ircd">ircd4j</a> - a Java IRC server library</li>
+        <li>a Java implementation of <a href="https://github.com/Wolf480pl/PHPass">PHPass</a> password hashing algorithm</li>
+        <li><a href="https://github.com/Wolf480pl/template-maven-plugin">template-maven-plugin</a> - a Maven plugin for generating code from trove4j-like templates</li>
+        <li><a href="https://github.com/Wolf480pl/jline-log4j2-appender">jline-log4j2-appender</a> - a log4j2 appender which prints output to jline console without getting in the way of the input prompt</li>
+        -->
+      </ul>
+      <a class="read-more" href="{{"/projects/" | prepend: site.baseurl}}">Read more...</a>
+    </section>
+    
+    </section>
+    <section class="articles">
+    
+    {{ content }}
+
+    </section>
+
+    {% include neon-footer.html %}
+
+</body>
+</html>
