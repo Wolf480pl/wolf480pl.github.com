@@ -11,14 +11,14 @@ url: "http://wolf480pl.github.io" # the base hostname & protocol for your site
 twitter_username: Wolf480pl
 github_username:  Wolf480pl
 #license: CC-BY
-#license_url: '#'
+license_url: 'https://creativecommons.org/licenses/by/4.0/'
 
 copyright:
-#  - name: Any code snippets in the blog content
-#    plural: true
-#    license: MIT License
-#    license_url: '/LICENSE.txt'
-#    suffix: ', unless otherwise noted'
+  - name: Any code snippets in the blog content
+    plural: true
+    license: MIT License
+    license_url: '/LICENSE.txt'
+    suffix: ', unless otherwise noted'
   - name: The neon-jekyll-theme
     license: MIT License
     license_url: '/LICENSE.txt'
