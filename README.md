@@ -1,6 +1,5 @@
-### A neon-ish Jekyll blog template
+### wolf480pl.github.io
 
-License is MIT.
-
-Still contains some parts of the default Jekyll theme, but they're gonna be removed from here one day.
-
+The theme used is [neon-jekyll-theme](https://github.com/Wolf480pl/neon-jekyll-theme), licensed under MIT License, see LICENSE.txt
+Blog content is licensed under Creative Commons CC-BY, see LICENSE.CC-BY.txt
+Any code snippets in the blog content are licsnsed under MIT License (see LICENSE.txt), unless otherwise noted.
