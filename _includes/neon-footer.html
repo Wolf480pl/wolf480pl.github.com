@@ -2,7 +2,7 @@
     <footer>
       <p>Copyright &copy; {{ site.time |date: "%Y" }} {{ site.author }}{% if page.license or site.license %}, licensed under {% if page.license %}<a rel="license" href="{{ page.license_url }}">{{ page.license }}{% else %}<a rel="license" href="{{ site.license_url }}">{{ site.license }}{% endif %}</a>{% endif %}</p>
       {% for copy in site.copyright %}
-        <p>{{ copy.name | markdownify | replace: '<p>' |replace: '</p>' }} {% if copy.plural %}are{% else %}is{% endif %} Copyright &copy; {% if copy.date %}{{ copy.date }}{% else %}{{ site.time |date: "%Y" }}{% endif %} {% if copy.author %}{{ copy.author }}{% else %}{{ site.author }}{% endif %}{% if copy.license %}, licensed under <a href="{{ copy.license_url }}">{{ copy.license }}</a>{% endif %}{{ copy.suffix | markdownify | replace: '<p>' |replace: '</p>' }}.</p>
+        <p>{{ copy.name | markdownify | replace: '<p>' |replace: '</p>' }} {% if copy.plural %}are{% else %}is{% endif %} Copyright &copy; {% if copy.date %}{{ copy.date }}{% else %}{{ site.time |date: "%Y" }}{% endif %} {% if copy.author %}{{ copy.author }}{% else %}{{ site.author }}{% endif %}{% if copy.license %}, licensed under <a href="{{ copy.license_url }}">{{ copy.license }}</a>{% endif %}{% if copy.suffix %}{{ copy.suffix | markdownify | replace: '<p>' |replace: '</p>' }}{% endif %}.</p>
       {% endfor %}
       <p>Proudly powered by <a href="https://jekyllrb.com/">Jekyll</a></p>
     </footer>
