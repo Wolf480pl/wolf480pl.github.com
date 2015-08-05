@@ -61,6 +61,7 @@ $theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg)
 // The rest of the stuff
 
 body {
+  line-height: 1.4;
   background: #111;
   color: #aaa;
   font-family: "Roboto", "Roboto-Fallback", "Droid Sans", "Helvetica", "Arial", sans-serif;
@@ -228,6 +229,15 @@ h3 {
       padding-left: 5px;
     }
   }
+  .post-content {
+    ul li {
+      text-indent: -12px;
+      padding-left: 20px;
+    }
+  }
+  .post-content p {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 280px) {
@@ -341,6 +351,24 @@ address {
 
 .read-more {
   font-style: italic;
+}
+
+pre,code {
+  font-size: 0.85rem;
+}
+
+code, pre {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  padding: 3px;
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+address {
+  line-height: initial;
 }
 
 @import "syntax-highlighting-neon.css";
