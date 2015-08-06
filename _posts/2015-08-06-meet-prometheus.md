@@ -16,11 +16,11 @@ As for external IO, it has 3x USB 3.0, 2x USB 2.0, SD card slot, 4 audio jacks, 
 
 It has German keyboard layout (QWERTZ), and it came with a set of stickers for converting the keyboard to regular QWERTY. The thing is, the keyboard backlight shines through the captions on the keys, and when you put a sticker on a key, the light can't get through anymore. The differences between the layouts are not too big, though, and I barely look at the captions anyway, so I decided not to use the stickers. I made a few exceptions though:
 
-* delete and insert have very similar names in German, so I put a sticker on the delete key to be able to tell which one is which one
-* the tilde key (not a tilda at all in QWERTZ) had a lot of empty space next to the caption, so I managed to put a sticker there without covering the caption
+* 'delete' and 'insert' have very similar names in German, so I put a sticker on the 'delete' key to be able to tell which one is which one
+* the tilde (`~`) key (not a tilde at all in QWERTZ) had a lot of empty space next to the caption, so I managed to put a sticker there without covering the caption
 * the plus and minus keys (again, in QWERTZ they're sth totally different) are next to each other and I don't remember which is which, so I put a sticker on the minus key, and managed not to cover the original caption, like with the tilde
 
-The most annoying thing, though, is that there was no space for a nav block, and instead of putting it somewhere near the arrows (like on my netbook) they put it all the way above the numpad:
+The most annoying thing, though, is that there was no space for a full-sized home/end/pgup/pgdown block, and instead of putting it somewhere near the arrows (like on my netbook) they put it all the way above the numpad:
 
 ![erazer keyboard][erazer-kb]
 
@@ -51,7 +51,8 @@ Storage: 60 GB SSD + 1 TB HDD, both connected via 6Gb/s SATA
 Soundcard: Realtek ALC892 a.k.a. Intel HD Audio
 Ethernet: Qualcomm Atheros Killer E220x Gigabit Ethernet Controller
 Webcam: some Acer integrated webcam - USB ID: 5986:055c
-802.11 ac/a/b/g/n, Bluetooth 4.0
+WiFi+Bluetooth: Intel Dual Band Wireless-AC 7280
+                (802.11 ac/a/b/g/n, Bluetooth 4.0)
 ```
 
 <small>NOTE: If the photos looks like they travelled in time, then, well, they did... kinda... it just took me a long time (2 months) to write and publish this post, and the photos are a later addition, ok?</small>
