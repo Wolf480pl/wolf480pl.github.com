@@ -28,9 +28,9 @@ Other than that, it had some problems with optical drive, and I was thinking of 
 
 ### Optical drive issues
 
-The laptop had a BlueRay/DVD-RW combo drive. BlueRay drives usually can read CDs and DVDs, too. This one did... sort of. It couldn't read ones recorded with high speeds, i.e. most of the discs I burned myself. Had no problems with factory-recorded discs, though. It also couldn't burn DVDs or CDs - it'd fail with IO Error before even starting.
+The laptop had a BluRay/DVD-RW combo drive. BluRay drives usually can read CDs and DVDs, too. This one did... sort of. It couldn't read ones recorded with high speeds, i.e. most of the discs I burned myself. Had no problems with factory-recorded discs, though. It also couldn't burn DVDs or CDs - it'd fail with IO Error before even starting.
 
-It has a 1 year warranty, so I thought maybe I'd send it back to the shop so that they fix the drive and then send the laptop back, but... shipping takes a long time. Called them, and they said I can replace the drive myself w/o voiding the warranty, and there's just one screw holding it, which isn't sealed. <small>(There's just one warranty seal on a screw which holds the motherboard, so that the user is free to open the cover and eg. remove dust from the fan, etc.)</small> I went to a local computer store, bought a laptop DVD burner, and got the old drive replaced with the new one. It works great so far, and I don't mind it not being a BlueRay drive, because I don't have any BlueRay discs anyway.
+It has a 1 year warranty, so I thought maybe I'd send it back to the shop so that they fix the drive and then send the laptop back, but... shipping takes a long time. Called them, and they said I can replace the drive myself w/o voiding the warranty, and there's just one screw holding it, which isn't sealed. <small>(There's just one warranty seal on a screw which holds the motherboard, so that the user is free to open the cover and eg. remove dust from the fan, etc.)</small> I went to a local computer store, bought a laptop DVD burner, and got the old drive replaced with the new one. It works great so far, and I don't mind it not being a BluRay drive, because I don't have any BluRay discs anyway.
 
 ### What's next
 
