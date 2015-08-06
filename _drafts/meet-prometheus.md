@@ -3,11 +3,27 @@ layout: neon-post
 title: Meet Prometheus
 categories: prometheus
 ---
-Last month I bought myself a [Medion Erazer X7827 laptop][spec] (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 Haswell from before EU power limitation, 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
+A couple months ago I bought myself a [Medion Erazer X7827 laptop][spec] (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 4710MQ Haswell unaffected by [EU power limitation][ecodesign] (no 'U' suffix), 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
+
+![erazer back][erazer-back]
 
 As for external IO, it has 3x USB 3.0, 2x USB 2.0, SD card slot, 4 audio jacks, Ethernet, HDMI, VGA, Mini DisplayPort, and obviously a power jack. No ExpressCard, FireWire, or other connectors that are useful only for [DMA attacks][dma-attack].
 
-It had some problems with optical drive, and I was thinking of getting it fixed on warranty, so I decided to wait before installing Linux on it. I just set the hostname to *prometheus* and the wallpaper to [one depicting the Prometheus ship][wallpaper] from [Stargate], randomly found on Google. Oh, and I made Windows [keep RTC clock in UTC][win-hwclock-utc].
+![erazer connectors back][sockets-b]
+![erazer connectors left][sockets-l]
+![erazer connectors right][sockets-r]
+
+It has German keyboard layout (QWERTZ), and it came with a set of stickers for converting the keyboard to regular QWERTY. The thing is, the keyboard backlight shines through the captions on the keys, and when you put a sticker on a key, the light can't get through anymore. The differences between the layouts are not too big, though, and I barely look at the captions anyway, so I decided not to use the stickers. I made a few exceptions though:
+
+* delete and insert have very similar names in German, so I put a sticker on the delete key to be able to tell which one is which one
+* the tilde key (not a tilda at all in QWERTZ) had a lot of empty space next to the caption, so I managed to put a sticker there without covering the caption
+* the plus and minus keys (again, in QWERTZ they're sth totally different) are next to each other and I don't remember which is which, so I put a sticker on the minus key, and managed not to cover the original caption, like with the tilde
+
+The most annoying thing, though, is that there was no space for a nav block, and instead of putting it somewhere near the arrows (like on my netbook) they put it all the way above the numpad:
+
+![erazer keyboard][erazer-kb]
+
+Other than that, it had some problems with optical drive, and I was thinking of getting it fixed on warranty, so I decided to wait before installing Linux on it. I just set the hostname to *prometheus* and the wallpaper to [one depicting the Prometheus ship][wallpaper] from [Stargate], randomly found on Google. Oh, and I made Windows [keep RTC clock in UTC][win-hwclock-utc] <small>(and [disabled Windows Time Service][win-ntp-off] cause I've heard it likes to mess things up)</small>.
 
 ### Optical drive issues
 
@@ -19,8 +35,20 @@ It has a 1 year warranty, so I thought maybe I'd send it back to the shop so tha
 
 Now that I know I'm not gonna be sending Prometheus for any warranty repairs soon, it's time to install some Linux distro on it. But that requires taming SecureBoot, which the next post is gonna be about.
 
+![erazer front][erazer-front]
+
+<small>NOTE: If the photos looks like they travelled in time, then, well, they did... kinda... it just took me a long time (2 months) to write and publish this post, and the photos are a later addition, ok?</small>
+
 [spec]: #
-[dma-attack]: #
-[wallpaper]: #
-[Stargate]: #
-[win-hwclock-utc]: #
+[ecodesign]: http://www.eceee.org/ecodesign/products/personal_computers/
+[dma-attack]: https://en.wikipedia.org/wiki/DMA_attack
+[wallpaper]: http://images.forwallpaper.com/files/images/5/5938/5938029b/703563/wallpaper-space-stargate-atlantis-desktop-wallfreak-wallpapers-television-sandbox-prometheus-images-shows.jpg
+[Stargate]: https://en.wikipedia.org/wiki/Stargate
+[win-hwclock-utc]: https://wiki.archlinux.org/index.php/Time#UTC_in_Windows
+[win-ntp-off]: http://superuser.com/questions/494432/force-windows-8-to-use-utc-when-dealing-with-bios-clock/552275#552275
+[erazer-back]: {{ "/assets/att/erazer/back-0-512.jpg" |prepend: site.baseurl }}
+[sockets-b]: {{ "/assets/att/erazer/sockets-b-0-512.jpg" |prepend: site.baseurl }}
+[sockets-l]: {{ "/assets/att/erazer/sockets-l-0-512.jpg" |prepend: site.baseurl }}
+[sockets-r]: {{ "/assets/att/erazer/sockets-r-0-512.jpg" |prepend: site.baseurl }}
+[erazer-kb]: {{ "/assets/att/erazer/keyboard-hl-512.jpg" |prepend: site.baseurl }}
+[erazer-front]: {{ "/assets/att/erazer/front-0-512.jpg" |prepend: site.baseurl }}
