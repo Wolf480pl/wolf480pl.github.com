@@ -3,7 +3,7 @@ layout: neon-post
 title: Meet Prometheus
 categories: prometheus
 ---
-A couple months ago I bought myself a [Medion Erazer X7827 laptop][spec] (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 4710MQ Haswell unaffected by [EU power limitation][ecodesign] (no 'U' suffix), 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
+A couple months ago I bought myself a <b>Medion Erazer X7827 laptop</b> (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 4710MQ Haswell unaffected by [EU power limitation][ecodesign] (no 'U' suffix), 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
 
 ![erazer back][erazer-back]
 
@@ -37,9 +37,24 @@ Now that I know I'm not gonna be sending Prometheus for any warranty repairs soo
 
 ![erazer front][erazer-front]
 
+### Full spec
+
+```
+Medion Erazer X7827
+CPU: Intel Core i7-4710MQ @ 4 x 2.5-3.5 GHz Hyper-Threading
+RAM: 16 GiB (4 x 4 GiB)
+integrated GPU: Intel HD Graphics 4600
+discrete GPU: NVidia GeForce GTX 870M (GK104), 3 GiB GDDR5
+Display: ~17 inch, 1600x900
+Storage: 60 GB SSD + 1 TB HDD, both connected via 6Gb/s SATA
+Soundcard: Realtek ALC892 a.k.a. Intel HD Audio
+Ethernet: Qualcomm Atheros Killer E220x Gigabit Ethernet Controller
+Webcam: some Acer integrated webcam - USB ID: 5986:055c
+802.11 ac/a/b/g/n, Bluetooth 4.0
+```
+
 <small>NOTE: If the photos looks like they travelled in time, then, well, they did... kinda... it just took me a long time (2 months) to write and publish this post, and the photos are a later addition, ok?</small>
 
-[spec]: #
 [ecodesign]: http://www.eceee.org/ecodesign/products/personal_computers/
 [dma-attack]: https://en.wikipedia.org/wiki/DMA_attack
 [wallpaper]: http://images.forwallpaper.com/files/images/5/5938/5938029b/703563/wallpaper-space-stargate-atlantis-desktop-wallfreak-wallpapers-television-sandbox-prometheus-images-shows.jpg
