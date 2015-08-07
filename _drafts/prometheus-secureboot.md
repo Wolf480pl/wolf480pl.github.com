@@ -45,9 +45,9 @@ In my case, for some reason, HashTool only saw the /EFI directory of the Archiso
 
 Anyway, it works, Archiso is able to boot with SecureBoot enabled!
 
-[own-your-uefi]: #
-[PreLoader]: #
-[preloader-sign-effort]: #
-[efitools]: #
-[bug]: #
-[ArchLinux]: #
+[own-your-uefi]: http://blog.hansenpartnership.com/owning-your-windows-8-uefi-platform/
+[PreLoader]: http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/
+[preloader-sign-effort]: http://blog.hansenpartnership.com/adventures-in-microsoft-uefi-signing/
+[efitools]: https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/
+[bug]: https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/commit/?id=23c32a94d9d8932bb8dbaa5bff190dc3d28b27c8
+[ArchLinux]: https://www.archlinux.org/
