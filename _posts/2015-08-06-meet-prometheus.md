@@ -3,6 +3,8 @@ layout: neon-post
 title: Meet Prometheus
 categories: prometheus
 tags: laptop medion erazer specification hostname
+comments:
+  twitter: "https://twitter.com/Wolf480pl/status/629340008269369346"
 ---
 A couple months ago I bought myself a <b>Medion Erazer X7827 laptop</b> (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 4710MQ Haswell unaffected by [EU power limitation][ecodesign] (no 'U' suffix), 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
 
