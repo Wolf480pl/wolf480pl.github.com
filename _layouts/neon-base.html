@@ -9,9 +9,9 @@
     
     <section class="sidebar">
     
-    <section class="box"><address>
+    <section class="box">
       <h3>Me elsewhere</h3>
-      <dl>
+      <address><dl>
         {% for place in site.data.me_elsewhere %}
           <dt>{{ place.name }}:</dt><dd>{% if place.profile_url %}<a href="{{ place.profile_url }}">{{ place.content | markdownify }}</a>{% else %}{{ place.content | markdownify }}{% endif %}</dd>
         {% endfor %}
@@ -20,8 +20,8 @@
         <dt>XMPP:</dt><dd><a href="xmpp:wolf480pl@neko.im">wolf480pl@neko.im</a></dd>      
         <dt>Keybase:</dt><dd><a href="https://keybase.io/wolf480pl/">wolf480pl</a></dd>
         <dt>GitHub:</dt><dd><a href="https://github.com/Wolf480pl/">Wolf480pl</a></dd>-->
-      </dl>
-    </address></section>
+      </dl></address>
+    </section>
     
     <section class="box">
       <h3>My Projects</h3>
