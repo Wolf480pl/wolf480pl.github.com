@@ -12,4 +12,14 @@ layout: neon
     {{ content }}
   </div>
 
+  <footer>
+    {% if page.comments %}
+      <p>Comment on:
+      {% if page.comments.twitter %}
+        <a href="{{ page.comments.twitter }}" target="_blank">Twitter</a>
+      {% endif %}
+      </p>
+    {% endif %}
+  </footer>
+
 </article>

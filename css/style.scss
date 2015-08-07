@@ -367,4 +367,12 @@ address {
   line-height: initial;
 }
 
+article footer {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #777;
+  padding-left: 10px;
+  //border-top: 1px solid rgba(#777, 0.5);
+}
+
 @import "syntax-highlighting-neon.css";
