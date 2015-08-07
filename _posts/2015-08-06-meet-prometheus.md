@@ -6,13 +6,13 @@ tags: laptop medion erazer specification hostname
 ---
 A couple months ago I bought myself a <b>Medion Erazer X7827 laptop</b> (btw. it's a huge beast). I'm gonna call it <b>Prometheus</b>. It's pretty powerful - Core i7 4710MQ Haswell unaffected by [EU power limitation][ecodesign] (no 'U' suffix), 16 GiB RAM, both SSD and 1TB HDD. It came with Win8 installed out of the box.
 
-![erazer back][erazer-back]
+![Photo of Erazer's back with the lid open and a big blue-highlited "Erazer" inscription on the lid.][erazer-back]
 
 As for external IO, it has 3x USB 3.0, 2x USB 2.0, SD card slot, 4 audio jacks, Ethernet, HDMI, VGA, Mini DisplayPort, and obviously a power jack. No ExpressCard, FireWire, or other connectors that are useful only for [DMA attacks][dma-attack].
 
-![erazer connectors back][sockets-b]
-![erazer connectors left][sockets-l]
-![erazer connectors right][sockets-r]
+![Photo of connectors on Erazer's back.][sockets-b]
+![Photo of connectors on Erazer's left side.][sockets-l]
+![Photo of connectors on Erazer's right side.][sockets-r]
 
 It has German keyboard layout (QWERTZ), and it came with a set of stickers for converting the keyboard to regular QWERTY. The thing is, the keyboard backlight shines through the captions on the keys, and when you put a sticker on a key, the light can't get through anymore. The differences between the layouts are not too big, though, and I barely look at the captions anyway, so I decided not to use the stickers. I made a few exceptions though:
 
@@ -22,7 +22,7 @@ It has German keyboard layout (QWERTZ), and it came with a set of stickers for c
 
 The most annoying thing, though, is that there was no space for a full-sized home/end/pgup/pgdown block, and instead of putting it somewhere near the arrows (like on my netbook) they put it all the way above the numpad:
 
-![erazer keyboard][erazer-kb]
+![Photo of Erazer's keyboard, with the four mentioned keys in the top right corner, above the numpad.][erazer-kb]
 
 Other than that, it had some problems with optical drive, and I was thinking of getting it fixed on warranty, so I decided to wait before installing Linux on it. I just set the hostname to *prometheus* and the wallpaper to [one depicting the Prometheus ship][wallpaper] from [Stargate], randomly found on Google. Oh, and I made Windows [keep RTC clock in UTC][win-hwclock-utc] <small>(and [disabled Windows Time Service][win-ntp-off] cause I've heard it likes to mess things up)</small>.
 
@@ -36,7 +36,7 @@ It has a 1 year warranty, so I thought maybe I'd send it back to the shop so tha
 
 Now that I know I'm not gonna be sending Prometheus for any warranty repairs soon, it's time to install some Linux distro on it. But that requires taming SecureBoot, which the next post is gonna be about.
 
-![erazer front][erazer-front]
+![Photo of Erazer's front, with the lid open.][erazer-front]
 
 ### Full spec
 
