@@ -4,7 +4,7 @@ title: Taming SecureBoot on Prometheus
 categories: prometheus setup
 tags: secureboot secure boot uefi linux trust
 ---
-As I said in the previous post, Prometheus came with Win8, which means it has UEFI with SecureBoot enabled by default. It means it will refuse to boot anything it doesn't trust, like a linux installation liveCD/liveUSB.
+As I said in the [previous post][meet-prometheus], Prometheus came with Win8, which means it has UEFI with SecureBoot enabled by default. It means it will refuse to boot anything it doesn't trust, like a linux installation liveCD/liveUSB.
 
 ### Why SecureBoot is not evil
 
@@ -46,6 +46,7 @@ In my case, for some reason, HashTool only saw the /EFI directory of the Archiso
 
 Anyway, it works, Archiso is able to boot with SecureBoot enabled!
 
+[meet-prometheus]: {{ "/prometheus/2015/08/06/meet-prometheus/" | prepend: site.baseurl }}
 [own-your-uefi]: http://blog.hansenpartnership.com/owning-your-windows-8-uefi-platform/
 [PreLoader]: http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/
 [preloader-sign-effort]: http://blog.hansenpartnership.com/adventures-in-microsoft-uefi-signing/
