@@ -2,6 +2,7 @@
 layout: neon-post
 title: Taming SecureBoot on Prometheus
 categories: prometheus setup
+tags: secureboot secure boot uefi linux trust
 ---
 As I said in the previous post, Prometheus came with Win8, which means it has UEFI with SecureBoot enabled by default. It means it will refuse to boot anything it doesn't trust, like a linux installation liveCD/liveUSB.
 
