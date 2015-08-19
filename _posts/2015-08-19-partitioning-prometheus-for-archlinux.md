@@ -3,6 +3,8 @@ layout: neon-post
 title: Partitioning Prometheus
 categories: prometheus setup
 tags: partition gpt lvm luks dm-crypt detached header
+comments:
+  twitter: https://twitter.com/Wolf480pl/status/633950341097234432
 ---
 Now that I've [tamed SecureBoot][tamesb] and can boot Archiso on Prometheus, it's time to set up some partitions where I can install [Arch Linux][arch].
 
