@@ -7,7 +7,7 @@ Now that I've [tamed SecureBoot][tamesb] and can boot Archiso on Prometheus, it'
 
 As I said before, the laptop came with Windows 8 preinstalled, and the following partition scheme:
 
-`/dev/sda` - SSD, 60 GB, GPT partition table
+`/dev/sda` - SSD, 62.5 GB, GPT partition table
 
 * `/dev/sda1` - 500 MB - Windows recovery
 * `/dev/sda2` - 100 MiB - EFI System Partition
@@ -20,7 +20,7 @@ As I said before, the laptop came with Windows 8 preinstalled, and the following
 * `/dev/sdb1` - 869 GiB - `D:` "Data" (empty NTFS)
 * `/dev/sdb2` - 60.5 GiB - `E:` "Recovery" (NTFS with installers for all OEM-provided drivers and tools, images of some partitions on /dev/sda)
 
-Now, for some reason, I don't feel like wiping Win8. Maybe it's because I wanna try out Win10 once it's out, or maybe I'm afraid one day I'll need to use some windows-only program because school/work/whatever. Whatever the reason is, I'll go for dual-boot.
+Now, for some reason, I don't feel like wiping Win8. Maybe it's because <del>I wanna try out Win10 once it's out,</del> or maybe I'm afraid one day I'll need to use some windows-only program for school/work/etc. Whatever the reason is, I'll go for dual-boot.
 
 ### Move over, you fat Windows!
 
@@ -42,7 +42,7 @@ I zeroed `sdb2` and `sdb3` with `dd if=/dev/zero of=/dev/sdbX bs=4096` (yeah, my
 
 ### But Wolf, what is your plan?
 
-The plan was to have a LUKS-encrypted root partition on `/dev/sda6` (SSD), and then `/var` and `/home` on LVM on plain dm-crypt on the HDD. But since you can't reliably delete anything from an SSD (because [Flash Translation Layer][ssd-ftl] likes to [hide stuff from you][ssd-issues]), I decided to use a detached LUKS header on the HDD. That's what the 2 MiB `sdb2` is for. Now, I didn't like the idea of offsetting everything by 2 MiB just because LUKS - things look much better when aligned to 1 GiB - so I left a 1022 MiB of unallocated space between `sdb2` and `sdb3`. For `/home` and `/var` I anticipate a need for about 10 GiB and 15 GiB respectively (the latter due to [Docker]), which means a total 25 GiB for the LVM container (yeah, I know I didn't take the LVM metadata into account). I can later expand the container to the free space following it, and allocate the extra extents to whichever logical volume (`/home` or `/var`) needs it.
+The plan was to have a LUKS-encrypted root partition on `/dev/sda6` (SSD), and then `/var` and `/home` on LVM on plain dm-crypt on the HDD. But since you can't reliably delete anything from an SSD (because [Flash Translation Layer][ssd-ftl] likes to [hide stuff from you<sup>(section 5.19)</sup>][ssd-issues]), I decided to use a detached LUKS header on the HDD. That's what the 2 MiB `sdb2` is for. Now, I didn't like the idea of offsetting everything by 2 MiB just because LUKS - things look much better when aligned to 1 GiB - so I left a 1022 MiB of unallocated space between `sdb2` and `sdb3`. For `/home` and `/var` I anticipate a need for about 10 GiB and 15 GiB respectively (the latter due to [Docker]), which means a total 25 GiB for the LVM container (yeah, I know I didn't take the LVM metadata into account). I can later expand the container to the free space following it, and allocate the extra extents to whichever logical volume (`/home` or `/var`) needs it.
 
 Oh, and the existing `sda2` EFI System Partition will serve as `/boot`, it has about 74 MiB free, which should be enough for a bootloader and even 2 sets of kernel,initramfs,initramfs-fallback (where initramfs-fallback is an initramfs with all the kernel modules, just in case).
 
@@ -70,7 +70,7 @@ serpent-xts   512b        582,1                563,9
 twofish-xts   512b        359,5                364,1
 ```
 
-As you can see, AES is much faster than the others on my hardware (probably because it has hardware acceleration on the CPU instruction set level), and XTS ciphers are about 5x faster at encryption than CBC (IIRC CBC can be parallelized only on decryption, not on encryption, so that migh be the reason). Moreover, XTS was [designed with][XTS-wiki] disk encryption in mind, so I decided to go with aes-xts. More precisely, aes-xts-plain64 (apparently XTS [doesn't need ESSIV][xts-no-essiv]). As for key size, XTS actually splits the key in half, cause it needs two keys, so a 512 bit XTS key has strength equivalent to 256 bit symmetric key in other situations. While the strength of 128 bits "practically unbreakable" sounds good, 256 bits "breaking would require all the energy in Solar System" sounds better. So I went with 2x256 = 512 bit XTS key.
+As you can see, AES is much faster than the others on my hardware (probably because it has hardware acceleration on the CPU instruction set level), and XTS ciphers are about 5x faster at encryption than CBC (IIRC CBC can be parallelized only on decryption, not on encryption, so that migh be the reason). Moreover, XTS was [designed with][XTS-wiki] disk encryption in mind, so I decided to go with `aes-xts`. More precisely, `aes-xts-plain64` (apparently XTS [doesn't need ESSIV<sup>(section 5.15)</sup>][xts-no-essiv]). As for key size, XTS actually splits the key in half, cause it needs two keys, so a 512 bit XTS key has strength equivalent to 256 bit symmetric key in other situations. While the strength of 128 bits "practically unbreakable" sounds good, 256 bits "breaking would require all the energy in Solar System" sounds better. So I went with 2x256 = 512 bit XTS key.
 
 First, LUKS header for `sda6`:
 `cryptsetup luksFormat -c aes-xts-plain64 -s 512 --use-random --header /dev/sdb2 /dev/sda6`
@@ -78,7 +78,7 @@ Then open `sda6`:
 `cryptsetup open --type luks --header /dev/sdb2 --allow-discards /dev/sda6 root`
 which opens the container as `/dev/mapper/root`.
 
-Why did I use `--allow-discards` ? Aren't discards [bad][discard-bad]? Well, I think disclosing filesystem write patterns on files which are rarely written (like stuff in /usr and /etc), mounted with `relatime` (atime updated only when mtime or friends are uptaded), isn't that big of a deal, and can be sacrifised in order to extend the [life of SSD][discard-ssd-life]. AFAIK, in case of my rationale for using dm-crypt on `/`, which is making it harder to tamper with the filesystem and protecting plaintext keys(like sshd host keys  in `/etc`), it shouldn't make a difference.
+Why did I use `--allow-discards` ? Aren't discards [bad][discard-bad]? Well, I think disclosing filesystem write patterns on files which are rarely written (like stuff in /usr and /etc), mounted with `relatime` (atime updated only when mtime or friends are uptaded), isn't that big of a deal, and can be sacrifised in order to extend the life of SSD. AFAIK, in case of my rationale for using dm-crypt on `/`, which is making it harder to tamper with the filesystem and protecting plaintext keys (like sshd host keys  in `/etc`), it shouldn't make a difference.
 
 Now, to proceed with `sdb3`, we need a place to store its key, so I made an ext4 fs on `/dev/mapper/root`:
 `mkfs.ext4 -L arch-root /dev/mapper/root`
@@ -98,7 +98,7 @@ Then I created an LVM volume group on it:
 where:
 
 * `--clustered n` explicitely tells LVM that no other computers in a cluster (there's no cluster) will access the same volume (dunno if I really need it)
-* `-s 16M` sets the physical extent size to 16 MiB. The default is 4 MiB, and with LVM1 that would limit logical volume size to 256 GiB. LVM2 has no such limit, but the manpage says large number of extends slows down LVM tools (but not the IO performance). I thought setting the extend size to 16 MiB would be a good idea, because that would allow me to have 1 TiB in each logical volume even with LVM1, which means the number of extents won't get crazy high. I hope that makes sense.
+* `-s 16M` sets the physical extent size to 16 MiB. The default is 4 MiB, and with LVM1 that would limit logical volume size to 256 GiB. LVM2 has no such limit, but the manpage says a large number of extents slows down the LVM tools (but not the IO performance). I thought setting the extent size to 16 MiB would be a good idea, because that would allow me to have 1 TiB in each logical volume even with LVM1, which means the number of extents won't get crazy high. I hope that makes sense.
 
 Then `/var` (i.e. a 15 GiB `/dev/mapper/bundlevg-var` allocated from `bundlevg` volume group)
 `lvcreate -L 15G -n var bundlevg`
@@ -121,13 +121,12 @@ mount /dev/sda2 /boot
 
 At this point, the filesystems are ready for ArchLinux instllation.
 
-[tamesb]: #
-[arch]: #
+[tamesb]: {{ '/prometheus/setup/2015/08/12/prometheus-secureboot/' | prepend: site.baseur }}
+[arch]: https://www.archlinux.org/
 [gpttut]: http://www.rodsbooks.com/gdisk/mbr2gpt.html
-[ssd-ftl]: #
-[ssd-issues]: #
-[Docker]: #
-[XTS-wiki]: #
-[xts-no-essiv]: #
-[discard-bad]: #
-[discard-ssd-life]: #
+[ssd-ftl]: https://en.wikipedia.org/wiki/Flash_memory_controller#Flash_Translation_Layer_.28FTL.29_and_Mapping
+[ssd-issues]: https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects
+[Docker]: https://www.docker.com/
+[XTS-wiki]: https://en.wikipedia.org/wiki/Disk_encryption_theory
+[xts-no-essiv]: https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects
+[discard-bad]: http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html
