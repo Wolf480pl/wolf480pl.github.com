@@ -2,6 +2,7 @@
 layout: neon-post
 title: Configuring Arch's initramfs for detached LUKS header
 categories: prometheus setup
+tags: arch linux initramfs luks detached header
 ---
 After [setting up encrypted partitions][partitioning] and [installing][arch-install] [Arch Linux][arch], I relized that Arch's initramfs with the default `encrypt` hook can't mount an encrypted root filesystem with detached LUKS header. I had to modify it for that to work.
 
