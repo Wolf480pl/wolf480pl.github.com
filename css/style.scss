@@ -377,6 +377,12 @@ article footer {
   color: #777;
   padding-left: 10px;
   //border-top: 1px solid rgba(#777, 0.5);
+  a {
+    margin: 3px;
+  }
+  .sep {
+    margin-right: 3px;
+  }
 }
 
 @import "syntax-highlighting-neon.css";
