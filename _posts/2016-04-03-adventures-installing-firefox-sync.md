@@ -1,6 +1,6 @@
 ---
 layout: neon-post
-title: Adventures with installing firefox sync
+title: Adventures with installing Firefox Sync
 categories: faris server
 tags: firefox sync linux server readonly virtualenv python
 ---
