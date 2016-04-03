@@ -3,6 +3,9 @@ layout: neon-post
 title: Adventures with installing Firefox Sync
 categories: faris server
 tags: firefox sync linux server readonly virtualenv python
+comments:
+  twitter: https://twitter.com/Wolf480pl/status/716596266080317440
+  github: https://github.com/Wolf480pl/wolf480pl.github.com/commit/ba9e5276df68eaa0c78f33c73123a386e5cf5330#comments
 ---
 Yesterday, I decided it's time to finally install [Firefox Sync][fxsync] server on my new VPS, as I got fed up with being unable to send browser tabs across devices. On the old VPS, it used to be just be running from a git checkout under `/home/fxsync/`, the way the [official guide][mozguide] recommends. It's not hard to guess that the daemon was running as the `fxsync` user, the same user that owned (and had write permission to) all the Sync server's files. Not the cleanest solution ever, not to mention security concerns.
 
