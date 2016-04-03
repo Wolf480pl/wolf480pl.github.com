@@ -28,7 +28,8 @@ permalink: pretty
 exclude:
   - README.md
 
-highlighter: pygments
+highlighter: rouge
+#highlighter: pygments
 
 # Build settings
 markdown: kramdown
