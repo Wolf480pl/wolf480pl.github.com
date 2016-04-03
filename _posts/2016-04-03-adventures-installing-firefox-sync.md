@@ -13,7 +13,7 @@ Yesterday, I decided it's time to finally install [Firefox Sync][fxsync] server 
 
 The official way of installing Sync server is to install a few dependencies, clone the repo, and run `make build` in it. `make build` sets up a python virtualenv in the `./local` directory, and does `setup.py develop`, which half-builds the package and egg-links it into site-packages inside the virtualenv. Then to start the server, you run gunicorn from within the virtualenv, and give it the `syncserver.ini` file laying in the main directory of the repo.
 
-I wanted to put the whole virtualenv and the syncserver code in some `root:root` owned, `og-w` place. The right place for things that are contained in a single directory, and contain mixed platform-dependend and platform-independent files, is `/opt`. I also didn't want all the stuff like `MANIFEST.in`, `setup.py`, `README.md` and `.git` to go in there, as it's useless at runtime. To achieve this, I applied made a patch to `Makefile` that looks like this:
+I wanted to put the whole virtualenv and the syncserver code in some `root:root` owned, `og-w` place. The right place for things that are contained in a single directory, and contain mixed platform-dependend and platform-independent files, is `/opt`. I also didn't want all the stuff like `MANIFEST.in`, `setup.py`, `README.md` and `.git` to go in there, as it's useless at runtime. To achieve this, I made a patch to `Makefile` which looks like this:
 
 ```diff
 diff --git a/Makefile b/Makefile
@@ -57,7 +57,7 @@ Well, it's actually a config file. While it has some things like package name of
 
 ### ...and the mutable state?
 
-I also set the database path to `sqlite:////var/lib/fxsync/syncserver.db`. The `/var/lib/fxsync` directory is owned by `fxsync:fxsync`. By the way, <a rel="friend" href="https://ijestfajnie.pl">Michcioperz</a>, who is running about a dozen of webapps, told me recently that he moved everything to PostgreSQL, so he doesn't have lose sqlite files laying around. I might do the same in the future, would be pretty cool.
+I also set the database path to `sqlite:////var/lib/fxsync/syncserver.db`. The `/var/lib/fxsync` directory is owned by `fxsync:fxsync`. By the way, <a rel="friend" href="https://ijestfajnie.pl">Michcioperz</a>, who is running about a dozen of webapps, told me recently that he moved everything to PostgreSQL, so he doesn't have loose sqlite files laying around. I might do the same in the future, would be pretty cool.
 
 All this stuff was scripted with [Ansible], and the role files will soon end up in my [ansible-playbooks] repo. This will be useful in case I have to change VPS providers again, or have to reinstall the VPS for some other reason.
 
