@@ -3,8 +3,9 @@
 ---
 @charset "utf-8";
 
-@import "roboto.css";
-@import "roboto-fallback.css";
+//@import "roboto.css";
+//@import "roboto-fallback.css";
+@import "roboto-local.css";
 
 // Variables
 
@@ -13,51 +14,51 @@
 $theme-color-hl: #0ff;
 $theme-color: #0ab;
 $theme-color-bg: rgb(0, 128, 192);
-/**/
-// Green
-/*
-$theme-color-hl: #0f0;
-$theme-color: #090;
-$theme-color-bg: rgb(0, 128, 0);
-/**/
-// Yellow
-/*
-$theme-color-hl: #ff0;
-$theme-color: #ba0;
-$theme-color-bg: rgb(192, 128, 0);
-/**/
-// Red
-/*
-$theme-color-hl: #f00;
-$theme-color: #900;
-$theme-color-bg: rgb(128, 0, 0);
-/**/
-// Purple
-/*
-$theme-color-hl: #f0f;
-$theme-color: #a0b;
-$theme-color-bg: rgb(128, 0, 192);
-/**/
-// Blue
-/*
-$theme-color-hl: #47f;
-$theme-color: #03b;
-$theme-color-bg: rgb(0, 0, 192);
-/**/
+///**/
+//// Green
+///*
+//$theme-color-hl: #0f0;
+//$theme-color: #090;
+//$theme-color-bg: rgb(0, 128, 0);
+///**/
+//// Yellow
+///*
+//$theme-color-hl: #ff0;
+//$theme-color: #ba0;
+//$theme-color-bg: rgb(192, 128, 0);
+///**/
+//// Red
+///*
+//$theme-color-hl: #f00;
+//$theme-color: #900;
+//$theme-color-bg: rgb(128, 0, 0);
+///**/
+//// Purple
+///*
+//$theme-color-hl: #f0f;
+//$theme-color: #a0b;
+//$theme-color-bg: rgb(128, 0, 192);
+///**/
+//// Blue
+///*
+//$theme-color-hl: #47f;
+//$theme-color: #03b;
+//$theme-color-bg: rgb(0, 0, 192);
+///**/
 
-// ColorShifter
-/*
-$hue: 180deg;
+//// ColorShifter
+///*
+//$hue: 180deg;
+//
+//$cyan-color-hl: #0ff;
+//$cyan-color: #0ab;
+//$cyan-color-bg: rgb(0, 128, 192);
+//// TODO: Take into account the hue difference between the base colors, also add lightness correction control
 
-$cyan-color-hl: #0ff;
-$cyan-color: #0ab;
-$cyan-color-bg: rgb(0, 128, 192);
-// TODO: Take into account the hue difference between the base colors, also add lightness correction control
-
-$theme-color-hl: hsl($hue, saturation($cyan-color-hl), lightness($cyan-color-hl));
-$theme-color: hsl($hue, saturation($cyan-color), lightness($cyan-color));
-$theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg));
-/**/
+//$theme-color-hl: hsl($hue, saturation($cyan-color-hl), lightness($cyan-color-hl));
+//$theme-color: hsl($hue, saturation($cyan-color), lightness($cyan-color));
+//$theme-color-bg: hsl($hue, saturation($cyan-color-bg), lightness($cyan-color-bg));
+///**/
 // The rest of the stuff
 
 body {
