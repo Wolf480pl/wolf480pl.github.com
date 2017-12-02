@@ -3,6 +3,10 @@ layout: neon-post
 title: Thoughts on package managers
 categories: thoughts design
 tags: package management python java union filesystem design analysis thoughts
+comments:
+  github: https://github.com/Wolf480pl/wolf480pl.github.com/commit/ccd01b4daf349487c7492b2be05f89f34af619bf
+  mastodon: https://niu.moe/@Wolf480pl/99104177799007268
+  twitter: https://twitter.com/Wolf480pl/status/936902694261760000
 ---
 These days we deal with many package managers - the system package manager (eg. pacman, dpkg & apt, rpm & yum), and various language specific package managers (eg. pip, npm, maven, gem). Each of them has its own quirks, tradeoffs, and design choices. Many of them have loads of hacks layerd on top to overcome these package managers' limitations. Recently, I had some ideas how all this mess could be avoided.
 
