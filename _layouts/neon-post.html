@@ -18,6 +18,9 @@ layout: neon
       {% if page.comments.twitter %}
         <a href="{{ page.comments.twitter }}" target="_blank">Twitter</a>
       {% endif %}
+      {% if page.comments.mastodon %}
+        <span class="sep">&#xFF65;</span><a href="{{ page.comments.mastodon }}" target="_blank">Mastodon</a>
+      {% endif %}
       {% if page.comments.github %}
         <span class="sep">&#xFF65;</span><a href="{{ page.comments.github }}" target="_blank">GitHub</a>
       {% endif %}
