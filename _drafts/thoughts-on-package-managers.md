@@ -8,13 +8,13 @@ These days we deal with many package managers - the system package manager (eg. 
 
 I don't exactly know how package management is done in node.js and Ruby, so I'll use Python as my example of hacky package management.
 
-Python's package manager is pip, and the most prominent hack on top of pip is virtualenv. There's a nice [blog post][venv-rant] about why virtualenv is a hack and should be only used in developement environment, never for production. I recommend you read it, if you haven't yet, although it won't be necessary for understanding what I'm trying to say here.
+Python's package manager is pip, and the most prominent hack on top of pip is virtualenv. There's a nice [blog post about why virtualenv is a hack][venv-rant] and should be only used in developement environment, never for production. I recommend you read it, if you haven't yet, although it won't be necessary for understanding what I'm trying to say here.
 
 ### A typical "let's start working on a Python project"
 
 So, let's say we wanna start working on some python project we've just found on github.
 
-```sh
+```
 git clone ....someproject.git
 cd someproject
 pip install -r requirements.txt
@@ -24,7 +24,7 @@ But wait, that's not gonna work! pip will try to install stuff in `/usr/lib/pyth
 
 So, you want to install some dependencies somewhere in your home directory, instead of installing them system-wide. The most popular way to do this in the Python land is to create a virtualenv
 
-```sh
+```
 virtualenv ~/myVenv
 . ~/myVenv/bin/activate
 ```
@@ -61,7 +61,7 @@ Now, we want any package to be able to put its content anywhere in that namespac
 #### Why union the namespaces?
 
 Ok, let's say we decided that packages won't be able to put their stuff all over the namespace, and instead the package manager will enforce that each package is confined to its own subtree. Now, let's say there's a particular API `foo` that has multiple implementations, `fooA` and `fancyFoo`, each done by a different library in a separate package. Then let's say `bar` depends on `foo` API, and was build with `fooA` in mind. Therefore, there are refenrences to the part of namespace that belongs to `fooA` all over its code. Now, you want to install `fancyFoo` instead, as it's made to be a drop-in replacement. Well, `fancyFoo` can't use the same part of the namespace as `fooA`, because it's a different package. And by the way, you might want to have them both installed, and use one or another depending on context. You might say `./configure` should solve this by allowing you to point to the correct location of `foo` implementation. But if we're talking about Python, Java, or similar high-level languages, they don't have `./configure`, and the reference to `foo`'s namespace is all over the code, so it'd be inconvenient (at least) to find/replace all those at install time.
-Oh, and if you believe this example is fake, take a look at [SLF4J][slf4j]'s logging bridges. With `/package`-style package management, it wouldn't be possible.
+Oh, and if you believe this example is fake, take a look at [SLF4J's logging bridges][slf4j]. With `/package`-style package management, it wouldn't be possible.
 
 #### How to union?
 
@@ -79,7 +79,7 @@ Well, you could put them anywhere. But you probably want some system-wide locati
 
 By the way, you should have some convention of naming those packages - it should involve the package name, the exact version, possibly the author name, and anything it takes to make sure that package names are unique. Ideally, if two packages have the same name, they should be bit-to-bit identical. To be hones, using cryptographic hash of the package content as the name wouldn't be that bad of an idea, provided that no human ever has to look through these packages manually.
 
-What's important is that whatever naming convention you chose, it's orthogonal to what the package puts in the namespace.
+What's important is that whatever naming convention you chose, the package's name is orthogonal to what the package puts in the namespace.
 
 ### How does this solve our problems?
 
@@ -93,10 +93,10 @@ The third thing was avoiding version conflicts. Provided that you can store the 
 
 So we've solved all the problems virtualenv tries to solve, but what about the issues it introduces?
 
-Package duplication? We don't have any. You can have some packages in your system-wide area, other ones in your home directory, and even some in the project directory, and you can gather them up in one nice list of things to put in the namespace. No need to copy them all into a single location. And with sane cache and naming convention, you'll be able to reuse packages that you've already downloaded for some other project.
+Package duplication? We don't have any. You can have some packages in your system-wide area, other ones in your home directory, and even some in the project directory, and you can gather them up in one nice list of things to put in the namespace. No need to copy them all into a single per-project location. And with sane cache and naming convention, you'll be able to reuse packages that you've already downloaded for some other project.
 
 And what about the manual setup? Well, instead of this:
-```sh
+```
 git clone ....someproject.git
 cd someproject
 virtualenv ~/myVenv
@@ -105,7 +105,7 @@ python setup.py test
 ```
 
 You could just do this:
-```sh
+```
 git clone ....someproject.git
 cd someproject
 python setup.py test
@@ -126,7 +126,7 @@ Honestly, people, you could look around at how others have solved their problems
 Python has `sys.path` which does pretty much what `CLASSPATH` does in Java. Except that nobody uses `sys.path`. Or maybe...?
 
 Remember how I suggested this series of commands:
-```sh
+```
 git clone ....someproject.git
 cd someproject
 python setup.py test
@@ -139,14 +139,15 @@ If this is the case, then why the heck are we still using virtualenv? I hope som
 
 ### How to do this with system package manager
 
-I've had this idea in mind for quite a while.
+The same approach of union-namespace of packages can be used on a system package manager level.
+I've had this idea for in mind for quite a while:
 
 1. When building a package, package the contents into a squashfs instead of a tar.
 2. Put the packages on some writable partition, mounted eg. in `/pkgs` or `/var/pkgs`.
 3. Make the initramfs union-mount all the required packages as the new root, using overlayfs.
 4. Use mount namespaces to be able to have different packages installed on a per-user or per-process basis.
 
-Funny thing is, when I came up with this, I had no idea about the theory explained earlier in this post. I didn't realise how it's similar to Maven, or how it solves package management problems. I came up with it because I didn't like how the `.tar.xz`'s in package cache are all signed and can be easily verified, but it's a bit harder to verify if the extracted content on disk is the same as in the packages. So I came up with this idea that each package would be squashfs with dm-verity, the verity roothash would be in metadata, and the metadata would be signed and verified at package-mount-time.
+Funny thing is, when I came up with this, I had no idea about the theory explained earlier in this post. I didn't realise how it's similar to Maven, or how it solves package management problems. I came up with it because I didn't like how the `.tar.xz`'s in package cache are all signed and can be easily verified, but it's a bit harder to verify if the extracted content on disk is the same as in the packages. So I came up with this idea that each package would be squashfs with dm-verity, the verity roothash would be in metadata, and the metadata would be signed by the packager and verified at package-mount-time.
 
 Now, I know this particular `overlayfs` approach for system packages has some issues. I have answers for some of them, others need more research, but this is a topic for another blog post.
 
